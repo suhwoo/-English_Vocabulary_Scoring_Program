@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test</title>
+<style>
+header {
+	text-align: center;
+	color: antiquewhite;
+	background-color:black;
+	padding: 10px 10px;
+	border-style: double;
+	border-width: 5px;
+	border-color: antiquewhite;
+	font-family: Arial, 휴먼고딕;
+	height: 80px;
+}
+nav {
+	display: inline-block;
+	position: relative;
+	padding: 10px 10px;
+	border-style: double;
+	color: antiquewhite;
+	background-color:black;
+	text-align: center;
+	height: 200px;
+}
+</style>
+<script>
+var engl = ["grade", "graduate", "ingredient", "congress", "gradual", "geography", "grammar",
+	"graphic", "photograph", "agree", "congratulate", "graceful", "grateful"
+	, "gratitude", "grave", "grieve", "disabled", "enable"
+	, "inhabit", "prohibit", "exhibit", "heredity", "heritage"];
+var korea1 = ["성적", "졸업생", "재료", "회의", "점진적인", "지리학", "문법"
+	,"그림의", "사진", "동의하다", "축하하다", "우아한", "고마워하는" 
+	,"감사", "무덤", "애도하다", "장애가 있는", "할 수 있게 하다"
+	, "살다", "못하게 하다", "서식지", "유전", "유산"];
+var korea2 = ["등급","졸업하다","요소","의회", "ggg", "지리", "ggg"
+	,"시각 예술 작품", "ggg", "의견이 일치하다", "ggg", "기품 있는", "ggg"
+	, "ggg", "중대한", "ggg", "장애우", "~할 수 있게 하다"
+	, "서식하다", "금지하다", "ggg", "세습", "ggg"]
+
+var cnt = 0;
+var wronge = [];
+var wrongk = [];
+window.onload = function(){
+	document.getElementById("count").value = cnt+1;
+	document.getElementById("en").value = engl[cnt];
+}
+function iscorrect(){
+	if(cnt>=engl.length){
+		alert("test가 끝났습니다.\n종료를 눌러주세요");
+		return;
+	}
+	var e = document.getElementById("en");
+	var k = document.getElementById("ko");
+	if(k.value == korea1[cnt]){
+		alert("맞았습니다.");
+	}else if(k.value == korea2[cnt]){
+		alert("맞았습니다.");
+	}else{
+		alert("틀렸습니다."+"\n"+"정답은 '"+korea1[cnt]+"'");
+		wronge.push(engl[cnt]);
+		wrongk.push(korea1[cnt]);
+	}
+	cnt= cnt + 1;
+	if(cnt==engl.length){
+		document.getElementById("en").value = "끝났습니다";
+		document.getElementById("ko").value = "끝났습니다";
+		document.write("수고했습니다.","<br>");
+		document.write("총 문제 수 : "+engl.length+"<br>");
+		document.write("틀린 문제 수 : "+wronge.length+"<br>");
+		for(var w in wronge){
+			document.write(wronge[w],"|",wrongk[w],"<br>");
+		}
+	}else{
+	document.getElementById("count").value = cnt+1;
+	document.getElementById("en").value = engl[cnt];
+	document.getElementById("ko").value = "";
+	}
+}
+</script>
+</head>
+<body>
+
+<header>
+	<h1 id="english">Word Test</h1>
+</header>
+<nav>
+	개수 : <input type="text" id="count"> <br><br>
+	단어 : <input type="text" id="en"> <br><br>
+	뜻  :  <input type="text" id="ko"> <br><br>
+	<button type="button" onclick="iscorrect()">확인하기</button>
+</nav>
+
+</body>
+</html>
