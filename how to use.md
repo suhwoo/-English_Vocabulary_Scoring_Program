@@ -15,6 +15,9 @@
 **공백도 모르는걸로 간주한다:**  
 ![image](https://user-images.githubusercontent.com/61738600/127736885-715a7673-d3ba-44c8-b20f-5cb103c78ae6.png)  
   
+영단어 하나에 뜻이 여러개인 경우가 있는데, korean1과 korean2배열로 나누어 or로 둘 중 하나만 맞으면 맞는 답으로 처리했다.
+문제를 틀렸을 경우, 결과화면에서 다시 보여줄 수 있도록 따로 배열에 저장했다.  
+  
 문제를 모두 풀면 아래와 같이 총 문제수, 틀린 문제 수, 그리고 틀린 영단어들과 뜻을 나열한다.  
 ![image](https://user-images.githubusercontent.com/61738600/127736957-105cf7a4-b076-4c2e-88f3-099783a92de8.png)   
   
